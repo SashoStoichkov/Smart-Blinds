@@ -44,6 +44,8 @@ def AutoWindow():
     back_to_main_button = tk.Button(auto_window, height=5, width=20, text="Back to Main", font=("Comic Sans MS", 20, "bold"), command=auto_window.destroy, bg="red")
     back_to_main_button.pack(side="bottom", expand="yes")
 
+    # TODO: Refresh endlessly labels && fix degree symbols
+
     light_intensity_label = tk.Label(auto_window, text="Current light intensity: " + "5" + " lx", bg="green")
     light_intensity_label.config(font=("Arial", 15))
     light_intensity_label.pack(side="bottom", expand="yes")
