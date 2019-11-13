@@ -1,12 +1,10 @@
 import Tkinter as tk
-from temp_sensor import read_all
-
-from time import sleep
+from temp_sensor import TempSensor
 
 def MainWindow():
     main_window = tk.Tk()
     main_window.title("Smart Blinds")
-    # main_window.geometry('800x480')
+
     main_window.attributes("-fullscreen", True)
 
     main_window_label = tk.Label(main_window, text="Welcome to Smart Blinds")
@@ -32,30 +30,25 @@ def MainWindow():
 def AutoWindow():
     print("Entering Automatic mode!")
 
-    celsius_degree_symbol = ' \u2103'
-    fahrenheit_degree_symbol = ' \u2109'
-
     auto_window = tk.Tk()
     auto_window.title("Smart Blinds")
-    # auto_window.geometry('800x480')
+
     auto_window.attributes("-fullscreen", True)
     auto_window.configure(background="green")
 
     back_to_main_button = tk.Button(auto_window, height=5, width=20, text="Back to Main", font=("Comic Sans MS", 20, "bold"), command=auto_window.destroy, bg="red")
     back_to_main_button.pack(side="bottom", expand="yes")
 
-    # TODO: Refresh endlessly labels && fix degree symbols
+    sensor_frame = tk.Frame(auto_window)
+    sensor_frame.pack(side="bottom", expand="yes")
 
     light_intensity_label = tk.Label(auto_window, text="Current light intensity: " + "5" + " lx", bg="green")
     light_intensity_label.config(font=("Arial", 15))
     light_intensity_label.pack(side="bottom", expand="yes")
 
-    humidity, pressure, temperature_celsius = read_all()
-    temperature_fahrenheit = (temperature_celsius * 1.8) + 32
-
-    temperature_label = tk.Label(auto_window, text="Current temperature: " + str(round(temperature_celsius, 2)) + celsius_degree_symbol + " / " + str(round(temperature_fahrenheit, 2)) + fahrenheit_degree_symbol, bg="green")
-    temperature_label.config(font=("Arial", 15))
-    temperature_label.pack(side="bottom", expand="yes")
+    temperature_sensor = TempSensor(sensor_frame)
+    temperature_sensor.pack()
+    temperature_sensor.config(font=("Arial", 15), bg="green")
 
 def ManualWindow():
     print("Entering Manual mode!")
@@ -74,7 +67,7 @@ def ManualWindow():
 
     manual_window = tk.Tk()
     manual_window.title("Smart Blinds")
-    # manual_window.geometry('800x480')
+
     manual_window.attributes("-fullscreen", True)
     manual_window.configure(background="blue")
 
@@ -112,7 +105,7 @@ def SettingsWindow():
 
     settings_window = tk.Tk()
     settings_window.title("Smart Blinds")
-    # settings_window.geometry('800x480')
+
     settings_window.attributes("-fullscreen", True)
 
     back_to_main_button = tk.Button(settings_window, height=5, width=20, text="Back to Main", font=("Comic Sans MS", 20, "bold"), command=settings_window.destroy, bg="red")
