@@ -1,5 +1,7 @@
 import Tkinter as tk
+
 from temp_sensor import TempSensor
+from light_sensor import LightSensor
 
 def MainWindow():
     main_window = tk.Tk()
@@ -39,14 +41,17 @@ def AutoWindow():
     back_to_main_button = tk.Button(auto_window, height=5, width=20, text="Back to Main", font=("Comic Sans MS", 20, "bold"), command=auto_window.destroy, bg="red")
     back_to_main_button.pack(side="bottom", expand="yes")
 
-    sensor_frame = tk.Frame(auto_window)
-    sensor_frame.pack(side="bottom", expand="yes")
+    light_sensor_frame = tk.Frame(auto_window)
+    light_sensor_frame.pack(side="bottom", expand="yes")
 
-    light_intensity_label = tk.Label(auto_window, text="Current light intensity: " + "5" + " lx", bg="green")
-    light_intensity_label.config(font=("Arial", 15))
-    light_intensity_label.pack(side="bottom", expand="yes")
+    light_intensity_sensor = LightSensor(light_sensor_frame)
+    light_intensity_sensor.pack()
+    light_intensity_sensor.config(font=("Arial", 15), bg="green")
 
-    temperature_sensor = TempSensor(sensor_frame)
+    temp_sensor_frame = tk.Frame(auto_window)
+    temp_sensor_frame.pack(side="bottom", expand="yes")
+
+    temperature_sensor = TempSensor(temp_sensor_frame)
     temperature_sensor.pack()
     temperature_sensor.config(font=("Arial", 15), bg="green")
 
