@@ -35,6 +35,7 @@ def ManualWindow():
         button.config(height=5, width=10)
         button.config(text=man_l_buttons[i])
         button.config(font=("Arial", 20, "bold"), bg="green")
+        button.config(activebackground="green")
 
         button.bind('<ButtonPress-1>', start_motor)
         button.bind('<ButtonRelease-1>', stop_motor)
@@ -51,6 +52,7 @@ def ManualWindow():
     fully_open_button.config(height=5, width=10)
     fully_open_button.config(text="Fully open!")
     fully_open_button.config(font=("Arial", 20, "bold"), bg="green")
+    fully_open_button.config(activebackground="green")
 
     fully_open_button.grid(row=1, column=2)
 
@@ -59,6 +61,7 @@ def ManualWindow():
     fully_close_button.config(height=5, width=10)
     fully_close_button.config(text="Fully close!")
     fully_close_button.config(font=("Arial", 20, "bold"), bg="green")
+    fully_close_button.config(activebackground="green")
 
     fully_close_button.grid(row=2, column=2)
 
@@ -67,6 +70,7 @@ def ManualWindow():
     back_to_main_button.config(height=10, width=10)
     back_to_main_button.config(text="Back to main!")
     back_to_main_button.config(font=("Arial", 20, "bold"), bg="red")
+    back_to_main_button.config(activebackground="red")
     back_to_main_button.config(command=manual_window.destroy)
 
     back_to_main_button.grid(row=1, column=3, rowspan=2)

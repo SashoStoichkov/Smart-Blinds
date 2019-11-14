@@ -18,6 +18,7 @@ def AutoWindow():
     back_to_main_button.config(height=5, width=20)
     back_to_main_button.config(text="Back to Main")
     back_to_main_button.config(font=("Comic Sans MS", 20, "bold"), bg="red")
+    back_to_main_button.config(activebackground="red")
     back_to_main_button.config(command=auto_window.destroy)
 
     back_to_main_button.pack(side="bottom", expand="yes")

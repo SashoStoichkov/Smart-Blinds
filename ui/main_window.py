@@ -20,6 +20,7 @@ def MainWindow():
     auto_window_button.config(height=10, width=10)
     auto_window_button.config(text="Auto")
     auto_window_button.config(font=("Comic Sans MS", 20, "bold"), bg="green")
+    auto_window_button.config(activebackground="green")
     auto_window_button.config(command=AutoWindow)
 
     auto_window_button.pack(side="left", expand="yes")
@@ -29,6 +30,7 @@ def MainWindow():
     manual_window_button.config(height=10, width=10)
     manual_window_button.config(text="Manual")
     manual_window_button.config(font=("Comic Sans MS", 20, "bold"), bg="red")
+    manual_window_button.config(activebackground="red")
     manual_window_button.config(command=ManualWindow)
 
     manual_window_button.pack(side="right", expand="yes")
@@ -38,6 +40,7 @@ def MainWindow():
     exit_window_button.config(height=10, width=20)
     exit_window_button.config(text="Exit!")
     exit_window_button.config(font=("Comic Sans MS", 15, "bold"), bg="red")
+    exit_window_button.config(activebackground="red")
     exit_window_button.config(command=quit)
 
     exit_window_button.pack(side="bottom", expand="yes")
@@ -47,6 +50,7 @@ def MainWindow():
     manual_window_button.config(height=10, width=20)
     manual_window_button.config(text="Settings")
     manual_window_button.config(font=("Comic Sans MS", 15, "bold"), bg="blue")
+    manual_window_button.config(activebackground="blue")
     manual_window_button.config(command=SettingsWindow)
 
     manual_window_button.pack(side="bottom", expand="yes")
