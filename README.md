@@ -17,4 +17,4 @@
 
 ## Използвани библиотеки
 
-* https://github.com/gavinlyonsrepo/RpiMotorLib
+* [RpiMotorLib](https://github.com/gavinlyonsrepo/RpiMotorLib)
