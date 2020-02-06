@@ -43,8 +43,6 @@ NoConn ~ 900  1750
 NoConn ~ 900  1950
 NoConn ~ 900  2050
 NoConn ~ 900  2150
-NoConn ~ 900  2350
-NoConn ~ 900  2450
 NoConn ~ 900  2550
 NoConn ~ 900  2650
 NoConn ~ 900  2750
@@ -148,4 +146,129 @@ F 3 "" H 3400 2750 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 NoConn ~ 3400 2650
+Wire Wire Line
+	4950 1150 4900 1150
+Wire Wire Line
+	4900 1150 4900 1050
+Wire Wire Line
+	4900 1050 4950 1050
+$Comp
+L Motor:Stepper_Motor_bipolar Motor1
+U 1 1 5E3C1483
+P 6400 1200
+F 0 "Motor1" H 6588 1324 50  0000 L CNN
+F 1 "Stepper_Motor_bipolar" H 6588 1233 50  0000 L CNN
+F 2 "" H 6410 1190 50  0001 C CNN
+F 3 "http://www.infineon.com/dgdl/Application-Note-TLE8110EE_driving_UniPolarStepperMotor_V1.1.pdf?fileId=db3a30431be39b97011be5d0aa0a00b0" H 6410 1190 50  0001 C CNN
+	1    6400 1200
+	1    0    0    -1  
+$EndComp
+Text GLabel 4950 1450 0    50   Input ~ 0
+3V3
+$Comp
+L power:GND #PWR?
+U 1 1 5E3D2796
+P 4950 1550
+F 0 "#PWR?" H 4950 1300 50  0001 C CNN
+F 1 "GND" H 4955 1377 50  0000 C CNN
+F 2 "" H 4950 1550 50  0001 C CNN
+F 3 "" H 4950 1550 50  0001 C CNN
+	1    4950 1550
+	1    0    0    -1  
+$EndComp
+$Comp
+L A4998:A4988 MotorDriver1
+U 1 1 5E3D5118
+P 5350 1850
+F 0 "MotorDriver1" H 5350 2915 50  0000 C CNN
+F 1 "A4988" H 5350 2824 50  0000 C CNN
+F 2 "" H 5350 2950 50  0001 C CNN
+F 3 "" H 5350 2950 50  0001 C CNN
+	1    5350 1850
+	1    0    0    -1  
+$EndComp
+Text GLabel 900  2350 0    50   Input ~ 0
+GPIO22
+Text GLabel 900  2450 0    50   Input ~ 0
+GPIO23
+Text GLabel 4950 1250 0    50   Input ~ 0
+GPIO22
+Text GLabel 4950 1350 0    50   Input ~ 0
+GPIO23
+Text GLabel 5750 1350 2    50   Input ~ 0
+1B
+Text GLabel 6100 1300 0    50   Input ~ 0
+1B
+Text GLabel 5750 1250 2    50   Input ~ 0
+1A
+Text GLabel 5750 1150 2    50   Input ~ 0
+2A
+Text GLabel 5750 1050 2    50   Input ~ 0
+2B
+Text GLabel 6100 1100 0    50   Input ~ 0
+1A
+Text GLabel 6500 900  1    50   Input ~ 0
+2B
+Text GLabel 6300 900  1    50   Input ~ 0
+2A
+$Comp
+L Device:Battery_Cell Battery1
+U 1 1 5E3E99B9
+P 6950 1750
+F 0 "Battery1" H 7068 1846 50  0000 L CNN
+F 1 "9" H 7068 1755 50  0000 L CNN
+F 2 "" V 6950 1810 50  0001 C CNN
+F 3 "~" V 6950 1810 50  0001 C CNN
+	1    6950 1750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:CP1 C
+U 1 1 5E3ECAC5
+P 6500 1700
+F 0 "C" H 6615 1746 50  0000 L CNN
+F 1 "100u" H 6615 1655 50  0000 L CNN
+F 2 "" H 6500 1700 50  0001 C CNN
+F 3 "~" H 6500 1700 50  0001 C CNN
+	1    6500 1700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5750 1550 5800 1550
+Wire Wire Line
+	6100 1550 6100 1900
+Wire Wire Line
+	6950 1450 6950 1550
+Wire Wire Line
+	6950 1900 6950 1850
+Wire Wire Line
+	6100 1900 6500 1900
+Wire Wire Line
+	5750 1450 6500 1450
+Wire Wire Line
+	6500 1450 6500 1550
+Connection ~ 6500 1450
+Wire Wire Line
+	6500 1450 6950 1450
+Wire Wire Line
+	6500 1900 6500 1850
+Connection ~ 6500 1900
+Wire Wire Line
+	6500 1900 6950 1900
+$Comp
+L power:GND #PWR?
+U 1 1 5E4006C8
+P 5800 1700
+F 0 "#PWR?" H 5800 1450 50  0001 C CNN
+F 1 "GND" H 5805 1527 50  0000 C CNN
+F 2 "" H 5800 1700 50  0001 C CNN
+F 3 "" H 5800 1700 50  0001 C CNN
+	1    5800 1700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5800 1700 5800 1550
+Connection ~ 5800 1550
+Wire Wire Line
+	5800 1550 6100 1550
 $EndSCHEMATC
