@@ -4,3 +4,5 @@ https://www.pololu.com/file/0J687/SY28STH45-0674A.pdf
 https://store.comet.bg/Catalogue/Product/3894/
 https://store.comet.bg/Catalogue/Product/6336/
 https://store.comet.bg/download-file.php?id=7360
+
+https://pinout.xyz/pinout/hyperpixel4
