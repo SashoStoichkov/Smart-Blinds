@@ -13,7 +13,7 @@
 
 ### Дисплей
 
-* 4" дисплей за Raspberry Pi - high-resolution, high-speed, capacitive touch, Pimoroni
+* Дисплей 4", 800x480, IPS, HDMI, Touch screen - резистивен SPI, Waveshare
 
 ## Използвани библиотеки
 
