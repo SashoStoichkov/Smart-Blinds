@@ -12,7 +12,8 @@ class LightSensor(tk.Label):
         self.lux = self.read_data()
         self.str_lux = str(round(self.lux, 2))
 
-        self.config(text="Current light intensity: " + self.str_lux + " Lux")
+        text = "Current light intensity: " + self.str_lux + " Lux"
+        self.config(text=text)
 
         self.after(1000, self.update_light)
 
@@ -28,7 +29,6 @@ class LightSensor(tk.Label):
             self.str_lux = str(round(self.lux, 2))
 
             new_text = "Current light intensity: " + self.str_lux + " Lux"
-
             self.config(text=new_text)
 
         self.after(1000, self.update_light)

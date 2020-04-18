@@ -10,6 +10,7 @@ def MainWindow():
     main_window.title("Smart Blinds")
 
     main_window.attributes("-fullscreen", True)
+    main_window.configure(cursor="none")
 
     main_window_label = tk.Label(main_window, text="Welcome to Smart Blinds")
     main_window_label.config(font=("Comic Sans MS", 30))

@@ -11,7 +11,7 @@ def AutoWindow():
     auto_window.title("Smart Blinds")
 
     auto_window.attributes("-fullscreen", True)
-    auto_window.configure(background="green")
+    auto_window.configure(background="green", cursor="none")
 
     back_to_main_button = tk.Button(auto_window, bg="red")
 
@@ -28,11 +28,11 @@ def AutoWindow():
 
     light_intensity_sensor = LightSensor(light_sensor_frame)
     light_intensity_sensor.pack()
-    light_intensity_sensor.config(font=("Arial", 15), bg="green")
+    light_intensity_sensor.config(font=("Arial", 30), bg="green")
 
     temp_sensor_frame = tk.Frame(auto_window)
     temp_sensor_frame.pack(side="bottom", expand="yes")
 
     temperature_sensor = TempSensor(temp_sensor_frame)
     temperature_sensor.pack()
-    temperature_sensor.config(font=("Arial", 15), bg="green")
+    temperature_sensor.config(font=("Arial", 30), bg="green")

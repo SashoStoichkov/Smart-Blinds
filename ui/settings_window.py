@@ -8,6 +8,7 @@ def SettingsWindow():
     settings_window.title("Smart Blinds")
 
     settings_window.attributes("-fullscreen", True)
+    settings_window.configure(cursor="none")
 
     back_to_main_button = tk.Button(settings_window)
 

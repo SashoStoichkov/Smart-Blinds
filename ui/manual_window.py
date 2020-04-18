@@ -1,3 +1,5 @@
+from motor.motor_control import Motor
+
 import Tkinter as tk
 
 
@@ -6,12 +8,24 @@ def ManualWindow():
 
     running = False
 
-    def start_motor(event):
+    def start_motor_clock(event):
         global running
         running = True
-        print("starting motor...")
+        motor = Motor()
+        motor.open_clock()
 
-    def stop_motor(event):
+    def stop_motor_clock(event):
+        global running
+        print("stopping motor...")
+        running = False
+
+    def start_motor_anticlock(event):
+        global running
+        running = True
+        motor = Motor()
+        motor.open_anticlock()
+
+    def stop_motor_anticlock(event):
         global running
         print("stopping motor...")
         running = False
@@ -20,7 +34,7 @@ def ManualWindow():
     manual_window.title("Smart Blinds")
 
     manual_window.attributes("-fullscreen", True)
-    manual_window.configure(background="blue")
+    manual_window.configure(background="blue", cursor="none")
 
     left_frame = tk.Frame(manual_window)
     left_frame.configure(background="blue")
@@ -37,8 +51,13 @@ def ManualWindow():
         button.config(font=("Arial", 20, "bold"), bg="green")
         button.config(activebackground="green")
 
-        button.bind('<ButtonPress-1>', start_motor)
-        button.bind('<ButtonRelease-1>', stop_motor)
+        if i == 1:
+            button.bind('<ButtonPress-1>', start_motor_clock)
+            button.bind('<ButtonRelease-1>', stop_motor_clock)
+
+        elif i == 3:
+            button.bind('<ButtonPress-1>', start_motor_anticlock)
+            button.bind('<ButtonRelease-1>', stop_motor_anticlock)
 
         frame.grid(row=(i // 2), column=(i % 2))
         button.grid(sticky="nesw")
