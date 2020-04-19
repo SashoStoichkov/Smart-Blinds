@@ -14,8 +14,7 @@ class Motor():
         self.mymotor = RpiMotorLib.A4988Nema(self.direction, self.step, self.GPIO_pins, "A4988")
 
     def open_clock(self):
-        print("asd")
-        self.mymotor.motor_go(True, "Full", 1, .01, False, .05)
+        self.mymotor.motor_go(True, "1/16", 1, .00000001, False, .05)
 
     def open_anticlock(self):
-        self.mymotor.motor_go(False, "Full", 1, .01, False, .05)
+        self.mymotor.motor_go(False, "1/16", 1, .00000001, False, .05)

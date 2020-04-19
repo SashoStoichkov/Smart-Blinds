@@ -5,36 +5,33 @@ import Tkinter as tk
 
 def ManualWindow():
     print("Entering Manual mode!")
-
-    running = False
-
-    def start_motor_clock(event):
-        global running
-        running = True
-        motor = Motor()
-        motor.open_clock()
-
-    def stop_motor_clock(event):
-        global running
-        print("stopping motor...")
-        running = False
-
-    def start_motor_anticlock(event):
-        global running
-        running = True
-        motor = Motor()
-        motor.open_anticlock()
-
-    def stop_motor_anticlock(event):
-        global running
-        print("stopping motor...")
-        running = False
-
     manual_window = tk.Tk()
     manual_window.title("Smart Blinds")
 
     manual_window.attributes("-fullscreen", True)
     manual_window.configure(background="blue", cursor="none")
+
+    def start_motor_clock(e=None):
+        global running_clock
+        motor = Motor()
+        motor.open_clock()
+        running_clock = manual_window.after(1, start_motor_clock)
+
+    def stop_motor_clock(e=None):
+        global running_clock
+        print("stopping motor...")
+        manual_window.after_cancel(running_clock)
+
+    def start_motor_anticlock(e=None):
+        global running_anticlock
+        motor = Motor()
+        motor.open_anticlock()
+        running_anticlock = manual_window.after(1, start_motor_anticlock)
+
+    def stop_motor_anticlock(e=None):
+        global running_anticlock
+        print("stopping motor...")
+        manual_window.after_cancel(running_anticlock)
 
     left_frame = tk.Frame(manual_window)
     left_frame.configure(background="blue")
