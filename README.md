@@ -17,4 +17,4 @@
 
 ## Използвани библиотеки
 
-* [RpiMotorLib](https://github.com/gavinlyonsrepo/RpiMotorLib)
+* [RpiMotorLib](https://github.com/gavinlyonsrepo/RpiMotorLib/blob/master/Documentation/Nema11A4988.md)
