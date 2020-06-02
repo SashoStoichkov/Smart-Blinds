@@ -8,7 +8,7 @@ def AutoWindow():
     print("Entering Automatic mode!")
 
     auto_window = tk.Tk()
-    auto_window.title("Smart Blinds")
+    auto_window.title("SmartBlinds")
 
     auto_window.attributes("-fullscreen", True)
     auto_window.configure(background="green", cursor="none")

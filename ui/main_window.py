@@ -7,12 +7,12 @@ from settings_window import SettingsWindow
 
 def MainWindow():
     main_window = tk.Tk()
-    main_window.title("Smart Blinds")
+    main_window.title("SmartBlinds")
 
     main_window.attributes("-fullscreen", True)
     main_window.configure(cursor="none")
 
-    main_window_label = tk.Label(main_window, text="Welcome to Smart Blinds")
+    main_window_label = tk.Label(main_window, text="Welcome to SmartBlinds")
     main_window_label.config(font=("Comic Sans MS", 30))
     main_window_label.pack()
 

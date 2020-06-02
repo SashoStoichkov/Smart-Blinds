@@ -6,7 +6,7 @@ import Tkinter as tk
 def ManualWindow():
     print("Entering Manual mode!")
     manual_window = tk.Tk()
-    manual_window.title("Smart Blinds")
+    manual_window.title("SmartBlinds")
 
     manual_window.attributes("-fullscreen", True)
     manual_window.configure(background="blue", cursor="none")

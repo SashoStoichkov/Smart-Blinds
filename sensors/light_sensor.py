@@ -1,7 +1,7 @@
 from python_tsl2591 import tsl2591
-
 import Tkinter as tk
 
+from motor.motor_control import Motor
 
 class LightSensor(tk.Label):
     def __init__(self, parent=None):
@@ -15,7 +15,7 @@ class LightSensor(tk.Label):
         text = "Current light intensity: " + self.str_lux + " Lux"
         self.config(text=text)
 
-        self.after(1000, self.update_light)
+        self.after(1, self.update_light)
 
     def read_data(self):
         full, ir = self.tsl.get_full_luminosity()
@@ -31,4 +31,13 @@ class LightSensor(tk.Label):
             new_text = "Current light intensity: " + self.str_lux + " Lux"
             self.config(text=new_text)
 
-        self.after(1000, self.update_light)
+            if float(self.str_lux) > 500:
+                print("> 500")
+                motor = Motor()
+                motor.open_clock()
+            elif float(self.str_lux) < 500:
+                print("< 500")
+                motor = Motor()
+                motor.open_anticlock()
+
+        self.after(1, self.update_light)
