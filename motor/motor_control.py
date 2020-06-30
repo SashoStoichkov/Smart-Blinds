@@ -15,16 +15,6 @@ class Motor():
         self.mymotor = RpiMotorLib.A4988Nema(self.direction, self.step, self.GPIO_pins, "A4988")
 
     def change_motor_position(self, direction):
-        # lines = []
-
-        # with open("/etc/profile", 'r') as profile:
-        #     lines = profile.readlines()
-        #     new_pos = str(int(os.environ["CURRENT_POS"]) + direction)
-        #     new_last_line = "export CURRENT_POS=" + new_pos
-        #     lines[-1] = new_last_line
-
-        # with open("/etc/profile", 'w') as profile:
-        #     profile.writelines(lines)
         os.environ["CURRENT_POS"] = str(int(os.environ["CURRENT_POS"]) + direction)
 
     def open_clock(self):
